@@ -11,3 +11,10 @@
     4. sudo make install
     6. sudo ldconfig
     7. cd ..
+5. Navigate to yatebts folder 
+    1. ./autogen.sh
+    2. ./configure --prefix=/usr/local
+    3. make -j4
+    4. sudo make install
+    6. sudo ldconfig
+    7. cd ..
