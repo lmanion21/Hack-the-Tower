@@ -1,5 +1,9 @@
 # Hack-the-Tower
 ## XE401 Hack the Tower Repo
+This Repoistory is the main working repository for USMA Hack the Tower.
+Located here are scripts and instructions to set up a working 2G cell phone
+tower using the nuande bladeRF and yatebts. The goal of this project is
+to succesfully create or find exploits using a moblie base station.
 ### Instructions:
 1. Run Scripts
 2. `bladeRF-cli -l <path to fpga>`
@@ -20,3 +24,8 @@
 7. `sudo ln -s /usr/local/share/yate/nib_web nib`
 8. `sudo chmod -R a+w /usr/local/etc/yate`
 9. Navigate to `http://ip-of-your-rpi/nib` on your web browser
+
+
+This project is based on work from the Army Cyber Institute and 
+evilsocket.
+https://www.evilsocket.net/2016/03/31/how-to-build-your-own-rogue-gsm-bts-for-fun-and-profit/
