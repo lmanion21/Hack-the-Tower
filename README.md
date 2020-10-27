@@ -24,8 +24,8 @@ to succesfully create or find exploits using a moblie base station.
 7. `sudo ln -s /usr/local/share/yate/nib_web nib`
 8. `sudo chmod -R a+w /usr/local/etc/yate`
 9. Navigate to `http://ip-of-your-rpi/nib` on your web browser
+10. `sudo yate -s`
 
 ## References 
 This project is based on work from the Army Cyber Institute and 
-evilsocket.
-[evilsocket](https://www.evilsocket.net/2016/03/31/how-to-build-your-own-rogue-gsm-bts-for-fun-and-profit/)
+[evilsocket](https://www.evilsocket.net/2016/03/31/how-to-build-your-own-rogue-gsm-bts-for-fun-and-profit/).
