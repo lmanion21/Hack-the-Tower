@@ -5,26 +5,29 @@ Located here are scripts and instructions to set up a working 2G cell phone
 tower using the nuande bladeRF and yatebts. The goal of this project is
 to succesfully create or find exploits using a moblie base station.
 ### Instructions:
-1. Run Scripts
-2. `bladeRF-cli -l <path to fpga>`
-3. `bladeRF-cli -f <load firmware>`
-4. Navigate to yate folder 
+1. First, we must run our scripts. Start by navigating to running `./pkg_install.sh` and `./yatebts_install` under the correct OS.
+2. Next, we need to lod the image and the firmware onto the bladeRF. \n 
+`bladeRF-cli -l <path to fpga>`\n
+`bladeRF-cli -f <load firmware>`
+3. now we need to compile yate software. Navigate to yate folder 
     1. `./autogen.sh`
     2. `./configure --prefix=/usr/local`
     3. `make -j4`
     4. `sudo make install`
     6. `sudo ldconfig`
-5. Navigate to yatebts folder 
+4. Navigate to yatebts folder 
     1. `./autogen.sh`
     2. `./configure --prefix=/usr/local`
     3. `make -j4`
     4. `sudo make install`
     6. `sudo ldconfig`
-6. `cd /var/www/html/`
-7. `sudo ln -s /usr/local/share/yate/nib_web nib`
-8. `sudo chmod -R a+w /usr/local/etc/yate`
-9. Navigate to `http://ip-of-your-rpi/nib` on your web browser
-10. `sudo yate -s`
+5. Now we will set up the yatebts web server. \n
+`cd /var/www/html/`
+6. `sudo ln -s /usr/local/share/yate/nib_web nib`
+7. `sudo chmod -R a+w /usr/local/etc/yate`
+8. See if your server is up and running by navigating to `http://ip-of-your-rpi/nib` on your web browser.
+9. Start your base station \n
+`sudo yate -s`
 
 ## References 
 This project is based on work from the Army Cyber Institute and 
