@@ -6,9 +6,9 @@ tower using the nuande bladeRF and yatebts. The goal of this project is
 to succesfully create or find exploits using a moblie base station.
 ### Instructions:
 1. First, we must run our scripts. Start by navigating to running `./pkg_install.sh` and `./yatebts_install` under the correct OS.
-2. Next, we need to lod the image and the firmware onto the bladeRF. \n 
-`bladeRF-cli -l <path to fpga>`\n
-`bladeRF-cli -f <load firmware>`
+2. Next, we need to lod the image and the firmware onto the bladeRF. 
+    1. `bladeRF-cli -l <path to fpga>`
+    2. `bladeRF-cli -f <load firmware>`
 3. now we need to compile yate software. Navigate to yate folder 
     1. `./autogen.sh`
     2. `./configure --prefix=/usr/local`
@@ -21,13 +21,13 @@ to succesfully create or find exploits using a moblie base station.
     3. `make -j4`
     4. `sudo make install`
     6. `sudo ldconfig`
-5. Now we will set up the yatebts web server. \n
-`cd /var/www/html/`
-6. `sudo ln -s /usr/local/share/yate/nib_web nib`
-7. `sudo chmod -R a+w /usr/local/etc/yate`
-8. See if your server is up and running by navigating to `http://ip-of-your-rpi/nib` on your web browser.
-9. Start your base station \n
-`sudo yate -s`
+5. Now we will set up the yatebts web server.
+    1. `cd /var/www/html/`
+    2. `sudo ln -s /usr/local/share/yate/nib_web nib`
+    3. `sudo chmod -R a+w /usr/local/etc/yate`
+6. See if your server is up and running by navigating to `http://ip-of-your-rpi/nib` on your web browser.
+7. Start your base station 
+    1. `sudo yate -s`
 
 ## References 
 This project is based on work from the Army Cyber Institute and 
