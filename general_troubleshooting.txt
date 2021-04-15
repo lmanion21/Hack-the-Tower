@@ -1,0 +1,31 @@
+THIS IS A GENERAL TROUBLESHOOTING README FOR HACK THE TOWER
+
+---Phones that won't connect to the network (No LTE Connection)---
+
+1.) Ensure that the SIM card is properly inserted into the phone and is correctly registered on the nextEPC subcriber list (localhost:3000). Reference the README on SIM card writing for more information.
+2.) Ensure that the phone is close to the TX and RX antennas on the bladeRF.
+3.) Go into the phone settings and ensure that you are registered on the HackTheTower network. In the Network Operator settings, the network may go as either "Software Radio Systems","Hack the Tower", or "Test PLMN 1-1."
+4.) Restart the phone
+5.) Restart the radio by unplugging it and running the startup program again.
+6.) Restart the computer
+7.) If you are consistently unable to make some semblance of connection the network, it may be the case at this point that your phone is faulty. Try changing out the SIM card with a different phone.
+
+---Non-Functional Internet---
+
+If the internet is not working on the phones you firstly want to check that there is a recognized LTE connection on the phone as well as the EPC and ENB software components. If there is a connection, then the next likely scenario is that your iptable and forwarding settings are properly configured. Reference the Network Settings page of the nextEPC setup manual and enter the following commands:
+
+1.) Ensure that ip forwarding is set to 1
+<sysctl net.ipv4.ip_forward> if it reads '0' enter:
+<sudo sh -c "echo 1 > /proc/sys/net/ipv4/ip_forward"
+
+2.) Ensure that your iptables have the proper rules
+<sudo iptables -t nat -A POSTROUTING -o <'interface-name'> -j MASQUERADE> where 'interface-name' refers to the outgoing interface such as 'wlp1s0'
+<sudo iptables -I INPUT -i pgwtun -j ACCEPT>
+
+3.) Use Wireshark on the pgwtun interface to ensure that traffic is properly flowing on the network. Bear in mind that the network may be slow, so use less resource heavy websites as tests.
+
+
+---Troubleshooting Methods Not Based in any Real Science---
+
+1.) Bear in mind that the software and phones are finnicky at best and it will often require a combination of trial and error to get them to work just right. While there probably is a concrete reason why you can't consistently get the result you want, it requires more research as to why. Lots of restarting will be required.
+2.) The running theory for AY21-2 is that all the equipment magically stops working at around 1130, just in time for you to throw up your hands in anger and go to lunch. :-)

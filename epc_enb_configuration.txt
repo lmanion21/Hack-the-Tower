@@ -1,0 +1,28 @@
+THIS README COVERS INTEGRATION FOR SRSENB AND NEXTEPC
+
+The two modules are integrated via a common IP address, in this case, it will be the outgoing IP address...
+
+STEP BY STEP INSTRUCTIONS:
+
+---NextEPC (Much of the instructions are covered in the installation guide)---
+
+1.) run <ip addr> and figure out what the outgoing IP address is --- For this computer it should be the <wlp1s0> interface.
+2.) all the points from which to update the ip address for nextEPC are found in /nextepc/install/etc/nextepc
+3.) in mme.conf update line 17 with the outgoing ip address after <addr:>
+4.) in sgw.conf update line 17 with the outgoing ip address after <addr:>
+
+---srsENB---
+
+5.) in order to access the enb.conf file for srsENB you need to have root privileges. To do this run <sudo su> and enter your password.
+6.) navigate to /root/.config/srslte
+7.) open enb.conf
+8.) in enb.conf, you want to change settings in 3rd section (line 21 and on)
+9.) comment out <tac = 0x0007> with <#>
+10.) change <mme_addr = ...> to the outgoing ip address and ensure that it is not commented out
+11.) change <s1c_bind_addr = ...> to the outgoing ip address and ensure that it is not commented out
+
+---Testing---
+
+12.) After running htt_startup program in nextEPC you should see the success message: <eNB-S1 accepted[...]> where the ellipses correspond to the outgoing ip address.
+13.) For srsENB a successful test will output no error messages and < ==== eNodeB started === >
+14.) If you receive an error on either interface troubleshoot accordingly.
