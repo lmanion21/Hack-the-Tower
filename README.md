@@ -13,7 +13,7 @@ Samantha Rankin sam.m.rankin@gmail.com
 
 ## Code Overview
 Under the "scripts" folder, you will find two installation options for installing the software for the 2G tower; one for Fedora and one for Ubuntu. Installation instructions are below for setting the 2G tower up with a BladeRF software defined radio. 
-The remaining files in the main repository contain the software for the 4G tower, which can also be utilized with the BladeRF software defined radio. The tower is a combination of srsLTE and NextEPC, and is currently configured for Wren_cadets. 
+The remaining files in the main repository contain the software for the 4G tower, which can also be utilized with the BladeRF software defined radio. The tower is a combination of srsLTE and NextEPC, and is currently configured for Wren_cadets. Additionally, there are trouble shooting and confguration guides in text files in the main repository. 
 
 
 ## XE401 Hack the Tower Repo (2G)
