@@ -1,9 +1,22 @@
-# Hack-the-Tower
-## XE401 Hack the Tower Repo
+# Hack-the-Tower Overview
+
 This Repoistory is the main working repository for USMA Hack the Tower.
 Located here are scripts and instructions to set up a working 2G cell phone
-tower using the nuande bladeRF and yatebts. The goal of this project is
+tower using the nuande bladeRF and yatebts, and our continuation to 4G with srsLTE and NextEPC. The goal of this project is
 to succesfully create or find exploits using a moblie base station.
+
+Team Members
+Andrew Sweatt andrewsweatt99@gmail.com
+Luke Manion lmanion2017@gmail.com
+Rich Sung jungmo98@gmail.com
+Samantha Rankin sam.m.rankin@gmail.com
+
+## Code Overview
+Under the "scripts" folder, you will find two installation options for installing the software for the 2G tower; one for Fedora and one for Ubuntu. Installation instructions are below for setting the 2G tower up with a BladeRF software defined radio. 
+The remaining files in the main repository contain the software for the 4G tower, which can also be utilized with the BladeRF software defined radio. The tower is a combination of srsLTE and NextEPC, and is currently configured for Wren_cadets. 
+
+
+## XE401 Hack the Tower Repo (2G)
 ### Instructions:
 1. First, we must run our scripts. Start by navigating to running `./pkg_install.sh` and `./yatebts_install` under the correct OS.
 2. Next, we need to lod the image and the firmware onto the bladeRF. 
@@ -34,6 +47,8 @@ This project is based on work from the Army Cyber Institute and
 [evilsocket](https://www.evilsocket.net/2016/03/31/how-to-build-your-own-rogue-gsm-bts-for-fun-and-profit/).
 
 ## 4G LTE with srsLTE
+
+## Build Guide
 1. Install on Ubuntu with: sudo add-apt-repository ppa:srslte/releases
 sudo apt-get update
 sudo apt-get install srslte -y
@@ -88,3 +103,4 @@ This project is based on work by [srsLTE](https://github.com/srslte/srslte).
 ## 4G Tower Start Up
 1.) If your computer already has the bladeRF, nextEPC, and srsENB software already installed, run the htt_startup_x115.sh script. Otherwise ensure that your software is installed first. Specific instructions are written in the comments of the script on where to find everything.
 2.) Once you've got a phone connected, run the inet_startup.sh script to auto-configure the ip tables and open up the pgwtun interface to traffic.
+
