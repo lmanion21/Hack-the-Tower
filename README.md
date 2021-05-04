@@ -84,3 +84,7 @@ More on https://nextepc.org/installation/02-ubuntu/.
 
 ## References 
 This project is based on work by [srsLTE](https://github.com/srslte/srslte).
+
+## 4G Tower Start Up
+1.) If your computer already has the bladeRF, nextEPC, and srsENB software already installed, run the htt_startup_x115.sh script. Otherwise ensure that your software is installed first. Specific instructions are written in the comments of the script on where to find everything.
+2.) Once you've got a phone connected, run the inet_startup.sh script to auto-configure the ip tables and open up the pgwtun interface to traffic.
